@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato por Email</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+  
+  <nav class="top-menu">
+    <div class="links">
+      <a href="index.html">Início</a>
+
+    </div>
+  </nav>
+
+ 
+  <header class="section-header">
+    <h1>Contato via Email</h1>
+    <p>Envie sua mensagem!</p>
+  </header>
+
+
+  <div class="container">
+   
+   <form class="email-form">
+      <label for="from">Seu Gmail:</label>
+      <input type="email" id="from" name="from" placeholder="exemplo@gmail.com" required>
+
+      <label for="to">Destinatário:</label>
+      <input type="email" id="to" name="to" value="dgmotors@concessionaria.com" readonly>
+
+      <label for="subject">Assunto:</label>
+      <input type="text" id="subject" name="subject" placeholder="Digite o assunto" required>
+
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem..." required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  
+  <footer>
+    <p>&copy; 2025 DG Motors - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="email.js"></script>
+</body>
+</html>

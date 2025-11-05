@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Enviado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="top-menu">
+    <div class="links">
+      <a href="index.html">Início</a>
+      <a href="ctt.html">Contato via Email</a>
+    </div>
+  </nav>
+
+  <header class="section-header">
+    <h1>Email Enviado!</h1>
+    <p>Sua mensagem foi enviada com sucesso!</p>
+  </header>
+
+  <div class="container" style="text-align: center; padding: 40px 20px;">
+    <h2>Obrigado pelo contato!</h2>
+    <p>Em breve nossa equipe retornará sua mensagem.</p>
+    
+    <h3>Resumo do seu Email:</h3>
+    <p><strong>Remetente:</strong> <span id="remetente"></span></p>
+    <p><strong>Destinatário:</strong> <span id="destinatario"></span></p>
+    <p><strong>Assunto:</strong> <span id="assunto"></span></p>
+    <p><strong>Mensagem:</strong></p>
+    <p id="mensagem"></p>
+    
+    <br>
+    <a href="index.html" style="display: inline-block; padding: 12px 20px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+      Voltar para a Página Inicial
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 D&G Motors - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const emailData = JSON.parse(localStorage.getItem("ultimoEmail"));
+
+      if (emailData) {
+        document.getElementById("remetente").textContent = emailData.remetente;
+        document.getElementById("destinatario").textContent = emailData.destinatario;
+        document.getElementById("assunto").textContent = emailData.assunto;
+        document.getElementById("mensagem").textContent = emailData.mensagem;
+      } else {
+        
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+</body>
+</html>
