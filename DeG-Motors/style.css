@@ -1,0 +1,568 @@
+:root {
+  --primary-color: #e60000;
+  --background-dark: #111;
+  --background-medium: #1f1f1f;
+  --card-background: #2a2a2a;
+  --text-primary: white;
+  --text-secondary: #ddd;
+  --text-muted: #aaa;
+}
+
+/* ===== FUNDO ESCURO ELEGANTE COM MOVIMENTO ===== */
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--text-primary);
+  background: radial-gradient(circle at top left, #180000, #0a0a0a 40%, #000 80%);
+  background-size: 200% 200%;
+  animation: fundoEscuro 15s ease-in-out infinite;
+  scroll-behavior: smooth;
+}
+
+@keyframes fundoEscuro {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Remove textura antiga */
+body::before {
+  content: none;
+}
+
+/* Destaque dos cards */
+.car-card,
+.valor-item,
+.stat-item {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover,
+.valor-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+/* Texto com brilho sutil */
+.hero-section h2, 
+.section-header h1 {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6),
+               0 0 25px rgba(255, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--background-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-menu .links {
+  display: flex;
+  gap: 20px;
+}
+
+.top-menu a {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.top-menu a:hover,
+.top-menu a:target {
+  background: var(--primary-color);
+}
+
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.whatsapp-btn:hover {
+  background: #1eb954;
+}
+
+.logo {
+  height: 59px;
+  width: auto;
+}
+
+
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  border-bottom: 4px solid var(--primary-color); 
+}
+
+.hero-section h2 {
+  margin: 0;
+  font-size: 52px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.hero-section p {
+  margin-top: 15px;
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+
+.section-header {
+  background: url('https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-664c-61f7-8f01-cf1931acabc4/raw?se=2025-08-27T20%3A27%3A18Z&sp=r&sv=2024-08-04&sr=b&scid=3e9b97b4-9b0c-5db6-985d-f19d55a7642d&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-26T21%3A19%3A08Z&ske=2025-08-27T21%3A19%3A08Z&sks=b&skv=2024-08-04&sig=GGSc5wyu1V%2BSVGgG1llJNiJ9jIn/%2Bbr/kMURdlNJ%2BKY%3D') center/cover;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.section-header h1 {
+  font-size: 50px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.section-header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+
+section {
+  scroll-margin-top: 80px;
+}
+
+#sobre {
+  padding-top: 40px;
+}
+
+
+.car-card,
+.valor-item,
+.stat-item {
+  background: var(--card-background);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.car-card:hover,
+.valor-item:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+}
+
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  overflow: hidden;
+  text-align: left; 
+}
+
+.car-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 15px;
+}
+
+.car-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.price {
+  color: #fd3636;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+.sobre-nos {
+  background: var(--background-medium);
+  padding: 60px 20px;
+  margin: 40px 0;
+}
+
+.sobre-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sobre-texto h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.sobre-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-item {
+  padding: 20px;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+.valores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.valor-item {
+  padding: 30px 20px;
+}
+
+.valor-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.valor-item p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+
+footer {
+  background: var(--background-dark);
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+  .top-menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .top-menu .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo {
+    height: 100px;
+  }
+  .section-header h1 {
+    font-size: 36px;
+  }
+  .sobre-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
+
+
+.contact-form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--background-medium);
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #b30000;
+}
+
+
+
+
+.email-form {
+  background: var(--card-background);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.email-form label {
+  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+.email-form input,
+.email-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: var(--background-medium);
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.email-form input:focus,
+.email-form textarea:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.email-form button {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.email-form button:hover {
+  background: #b80000;
+}
+
+
+
+
+.car-card .car-link {
+  display: block;          
+  color: inherit;          
+  text-decoration: none;  
+}
+
+.car-card .car-link img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;      
+  transition: transform 0.2s;
+}
+
+.car-card .car-link .car-info {
+  padding: 15px;
+}
+
+.car-card .car-link:hover img {
+  transform: scale(1.03);  
+}
+
+
+
+
+
+.car-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+
+.car-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.car-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+
+.car-info-detail {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.car-info-detail h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.car-info-detail ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.car-info-detail .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fd3636;
+  margin-top: 10px;
+}
+
+
+.buy-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background-color: #b30000;
+}
+
+
+@media (max-width: 768px) {
+  .car-detail-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .car-info-detail {
+    text-align: center;
+  }
+}
+
+
+
+
+.titulo-veiculos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.titulo-veiculos h2 {
+  color: var(--primary-color);
+  font-size: 28px;
+  margin: 0;
+}
+
+#filtro-marca {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  background: var(--card-background);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+#filtro-marca:focus {
+  outline: 2px solid var(--primary-color);
+}
